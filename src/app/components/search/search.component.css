@@ -1,0 +1,32 @@
+.form {
+    margin: 30px auto;
+    padding: 20px 30px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    height: auto;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    animation: dropFade .6s cubic-bezier(1, 0, 0, 1);
+}
+
+.form>*:not(label) {
+    margin-bottom: 30px;
+}
+
+.form .btn {
+    width: 200px;
+    text-align: center;
+}
+
+@keyframes dropFade {
+    0% {
+        transform: translateY(-400px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
