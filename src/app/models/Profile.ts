@@ -1,3 +1,3 @@
 export class Profile {
-    profile:string;
+    profile: object;
 }

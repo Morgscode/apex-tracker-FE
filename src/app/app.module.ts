@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SearchComponent } from './components/search/search.component';
 import { HomeComponent } from './components/pages/home/home.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
