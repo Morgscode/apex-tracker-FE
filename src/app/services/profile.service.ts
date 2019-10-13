@@ -23,7 +23,7 @@ export class ProfileService {
   constructor(private http:HttpClient) { }
 
   getProfile(platform, gamertag):Observable<Profile> {
-    return this.http.get<Profile>(`${this.profileUrl}${platform}/${gamertag}`, httpOptions);
+    return this.http.get<Profile>(`${this.profileUrl}${platform}/${gamertag}`, httpOptions)
   }
 
 }
