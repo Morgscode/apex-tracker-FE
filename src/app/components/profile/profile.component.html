@@ -1,2 +1,39 @@
-<p>profile works!</p>
-<a routerLink="/search" class="btn">Grab another profile</a>
+<ng-template [ngIf]="apexProfile">
+  <aside class="profile-card" [ngStyle]="getBgImg()">
+    <p class="profile-text">
+      <span class="text-light">Gamertag: </span>
+      <span class="text-grey"> {{ apexProfile.gamertag | uppercase }}</span>
+    </p>
+    <p class="profile-text">
+      <span class="text-light">Active Legend: </span>
+      <span class="text-grey">
+        {{ apexProfile.activeLegend | uppercase }}
+      </span>
+    </p>
+    <p class="profile-text">
+      <span class="text-light">Overall Rank: </span>
+      <span class="text-grey"> {{ apexProfile.overallRank | number }} </span>
+    </p>
+    <p class="profile-text">
+      <span class="text-light">Overall Kills: </span>
+      <span class="text-grey"> {{ apexProfile.overallKills }}</span>
+    </p>
+    <p class="profile-text">
+      <span class="text-light">Overall Damage: </span>
+      <span class="text-grey">{{ apexProfile.overallDamage }}</span>
+    </p>
+    <p class="profile-text">
+      <span class="text-light">Overall Headshots: </span>
+      <span class="text-grey">{{ apexProfile.overallHeadshots }}</span>
+    </p>
+    <p class="profile-text">
+      <span class="text-light">Overall Top Three: </span>
+      <span class="text-grey">{{ apexProfile.overallTopThree }}</span>
+    </p>
+    <p class="profile-text">
+      <span class="text-light"></span>
+      <span class="text-grey"></span>
+    </p>
+    <a routerLink="/search" class="btn">Grab another profile</a>
+  </aside>
+</ng-template>

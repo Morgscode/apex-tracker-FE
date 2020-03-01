@@ -1,0 +1,25 @@
+.profile-card {
+  width: 95%;
+  max-width: 600px;
+  min-height: 100vh;
+  padding: 2% 4%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+}
+
+.profile-text {
+  width: 100%;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.legend-img {
+  width: 100%;
+}

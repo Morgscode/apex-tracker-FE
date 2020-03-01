@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
 import { SearchComponent } from "../search/search.component";
 import { Profile } from "../../models/Profile";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-profile",
@@ -9,7 +9,7 @@ import { Profile } from "../../models/Profile";
   styleUrls: ["./profile.component.css"]
 })
 export class ProfileComponent implements OnInit {
-  apexProfile;
+  apexProfile: any;
   bodyClasses = document.body.classList;
   constructor(private router: Router) {}
 
@@ -29,5 +29,12 @@ export class ProfileComponent implements OnInit {
       //build profile from response
       this.apexProfile.buildProfile(SearchComponent.searchResult.data);
     }
+  }
+
+  getBgImg() {
+    let heroBg = {
+      background: `rgba(33,33,33,.75),url(\'${this.apexProfile.imgUrl}\')`
+    };
+    return heroBg;
   }
 }
