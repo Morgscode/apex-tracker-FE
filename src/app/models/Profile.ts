@@ -15,4 +15,11 @@ export class Profile {
   overallTopThree: number;
 
   ngOnInit() {}
+
+  // models profile response into workable profile for view
+  public buildProfile(data: any) {
+    // section initial schema into two blocks to branch from
+    this.metadata = data.metadata;
+    this.statsArray = data.stats;
+  }
 }
