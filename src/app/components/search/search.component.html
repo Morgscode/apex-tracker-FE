@@ -1,12 +1,16 @@
 <form class="form" #profileSearchForm="ngForm" (ngSubmit)="onSubmit()">
-
-    <label for="gamertag">Gamertag:</label>
-    <input type="text" name="gamertag" [(ngModel)]="gamertag" placeholder="enter your gamertag here">
-    <label for="platform">Platform:</label>
-    <select name="platform" [(ngModel)]="platform">
-        <option value="psn">PSN</option>
-        <option value="xbl">Xbox Live</option>
-        <option value="ogn">Origin</option>
-    </select>
-    <input type="submit" class="btn" />
+  <label for="gamertag">Gamertag:</label>
+  <input
+    type="text"
+    name="gamertag"
+    [(ngModel)]="gamertag"
+    placeholder="enter your gamertag here"
+  />
+  <label for="platform">Platform:</label>
+  <select name="platform" [(ngModel)]="platform">
+    <option value="psn">PSN</option>
+    <option value="xbl">Xbox Live</option>
+    <option value="ogn">Origin</option>
+  </select>
+  <input type="submit" class="btn" />
 </form>

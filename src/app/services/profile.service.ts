@@ -1,29 +1,31 @@
-import { Injectable } from '@angular/core';
-import { Observable, ObservableLike } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
-import { Profile } from '../models/Profile';
+import { ProfileResponse } from "../models/ProfileResponse";
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'text/html',
-    'Access-Control-Allow-Origin':'*'
+    "Content-Type": "application/json",
+    Accept: "application/json",
+    "Access-Control-Allow-Origin": "*"
   })
-} 
+};
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
-
 export class ProfileService {
-  profileUrl:string = 'http://apex-tracker.tech/api/'
-  platform:string;
-  gamertag:string;
+  profileUrl: string = "http://apex-tracker.tech/api/";
+  platform: string;
+  gamertag: string;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getProfile(platform, gamertag):Observable<Profile> {
-    return this.http.get<Profile>(`${this.profileUrl}${platform}/${gamertag}`, httpOptions)
+  getProfile(platform, gamertag): Observable<ProfileResponse> {
+    return this.http.get<ProfileResponse>(
+      `${this.profileUrl}${platform}/${gamertag}`,
+      httpOptions
+    );
   }
-
 }
