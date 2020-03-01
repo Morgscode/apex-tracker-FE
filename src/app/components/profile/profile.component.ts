@@ -10,6 +10,7 @@ import { Router } from "@angular/router";
 })
 export class ProfileComponent implements OnInit {
   apexProfile: any;
+  heroBg = {};
   bodyClasses = document.body.classList;
   constructor(private router: Router) {}
 
@@ -28,13 +29,15 @@ export class ProfileComponent implements OnInit {
       this.apexProfile = new Profile();
       //build profile from response
       this.apexProfile.buildProfile(SearchComponent.searchResult.data);
+      // set bg image
+      this.setBgImg();
     }
   }
 
-  getBgImg() {
-    let heroBg = {
-      background: `rgba(33,33,33,.75),url(\'${this.apexProfile.imgUrl}\')`
+  setBgImg() {
+    this.heroBg = {
+      "background-image": `url(${this.apexProfile.imgUrl})`
     };
-    return heroBg;
+    return;
   }
 }
